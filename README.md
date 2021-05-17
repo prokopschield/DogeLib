@@ -34,6 +34,6 @@ bot.login("YOUR API KEY GOES HERE").then(async () => {
   const topRoom = topRooms.first();
 
   // join the largest room
-  bot.rooms.join(rooms[0].roomId);
+  bot.rooms.join(topRoom);
 });
 ```

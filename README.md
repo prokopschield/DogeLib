@@ -30,14 +30,8 @@ bot.login("YOUR API KEY GOES HERE").then(async () => {
   // get all public rooms sorted by the amount of listeners
   const topRooms = await bot.rooms.getTop();
 
-  // create an array of the available Rooms
-  const rooms = [];
-  for (const [id, room] of topRooms.entries()) {
-    rooms.push({
-      roomId: id,
-      roomName: room.name,
-    });
-  }
+  // get the top room
+  const topRoom = topRooms.first();
 
   // join the largest room
   bot.rooms.join(rooms[0].roomId);
